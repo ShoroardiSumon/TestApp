@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:test_app/animation/animatedContainer.dart';
 import 'package:test_app/animation/animationTween.dart';
+import 'package:test_app/animation/tweenAnimationBuilder.dart';
 
 class AnimationHome extends StatefulWidget {
   @override
@@ -12,9 +13,21 @@ class _AnimationHomeState extends State<AnimationHome> {
   List<String> _animationCategoryList = [
     "Animated Container",
     "Animation Tween",
+    "Tween Animation Builder",
+    "Animation Tween",
+    "Animated Container",
+    "Animation Tween",
+    "Animated Container",
+    "Animation Tween",
   ];
 
   List<Widget> _animationWidgetList = [
+    AnimatedContainerEx(),
+    AnimationTween(),
+    TweenAnimationBuilserEx(),
+    AnimationTween(),
+    AnimatedContainerEx(),
+    AnimationTween(),
     AnimatedContainerEx(),
     AnimationTween(),
   ];
