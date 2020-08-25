@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Broccoli",
+        "photo": "assets/images/broccoli.jpg"
+    },
+    {
+        "name": "Carrot",
+        "photo": "assets/images/carrot.jpg"
+    },
+    {
+        "name": "Bitter Melon",
+        "photo": "assets/images/bittermelon.jpg"
+    },
+    {
+        "name": "Brinjal",
+        "photo": "assets/images/brinjal.jpg"
+    },
+    {
+        "name": "Cauliflower",
+        "photo": "assets/images/cauliflower.jpg"
+    },
+    {
+        "name": "Fresh Tomato",
+        "photo": "assets/images/freshtomato.png"
+    },
+    {
+        "name": "Onion",
+        "photo": "assets/images/onion.jpg"
+    },
+    {
+        "name": "Potato",
+        "photo": "assets/images/potato.jpeg"
+    },
+    {
+        "name": "Purple Cauliflower",
+        "photo": "assets/images/purplecauliflower.jpg"
+    },
+    {
+        "name": "Tomato",
+        "photo": "assets/images/tomato.jpg"
+    }
+]
