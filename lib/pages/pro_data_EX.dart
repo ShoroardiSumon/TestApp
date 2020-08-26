@@ -31,4 +31,16 @@ class ProData extends ChangeNotifier {
     print(toDoList.length);
     return "success";
   }
+
+  Future<bool> loadMoreLM() async {
+    print("onLoadMore");
+    await Future.delayed(Duration(seconds: 0, milliseconds: 2000));
+    fetchToDo();
+    return true;
+  }
+
+  Future<void> refreshLM() async {
+    await Future.delayed(Duration(seconds: 0, milliseconds: 2000));
+    fetchToDo();
+  }
 }

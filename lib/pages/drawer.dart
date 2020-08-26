@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:responsive_container/responsive_container.dart';
 import 'package:test_app/animation/animation.dart';
 import 'package:test_app/constants.dart';
-import 'package:test_app/pages/hobby.dart';
+import 'package:test_app/pages/loadMore.dart';
 import 'package:test_app/pages/login_page.dart';
 import 'package:test_app/pages/toDoPage.dart';
 import 'package:test_app/pages/vegitables.dart';
@@ -129,8 +129,8 @@ class DrawerView extends StatelessWidget {
               InkWell(
                 onTap: () {
                   Navigator.of(context).pop();
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (context) => MyHobby()));
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => LoadMoreEx()));
                 },
                 child: ListTile(
                   leading: Icon(
@@ -140,7 +140,7 @@ class DrawerView extends StatelessWidget {
                   title: Padding(
                     padding: EdgeInsets.only(left: 15),
                     child: Text(
-                      'Hobby',
+                      'Load More',
                       style: TextStyle(
                         fontSize: 18,
                       ),

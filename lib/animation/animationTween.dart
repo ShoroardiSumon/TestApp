@@ -10,6 +10,7 @@ class _AnimationTweenState extends State<AnimationTween>
   AnimationController _animationController;
   Animation<Color> _colorAnimation;
   Animation<double> _sizeAnimation;
+  Animation _curves;
   bool isFav = false;
 
   @override
@@ -21,19 +22,22 @@ class _AnimationTweenState extends State<AnimationTween>
       vsync: this,
     );
 
-    _colorAnimation = ColorTween(begin: Colors.grey[400], end: Colors.red)
-        .animate(_animationController);
+    _curves =
+        CurvedAnimation(parent: _animationController, curve: Curves.linear);
+
+    _colorAnimation =
+        ColorTween(begin: Colors.grey[400], end: Colors.red).animate(_curves);
 
     _sizeAnimation = TweenSequence(<TweenSequenceItem<double>>[
       TweenSequenceItem<double>(
-        tween: Tween<double>(begin: 50, end: 100),
+        tween: Tween<double>(begin: 20, end: 100),
         weight: 100,
       ),
       TweenSequenceItem<double>(
-        tween: Tween<double>(begin: 100, end: 50),
+        tween: Tween<double>(begin: 100, end: 20),
         weight: 100,
       ),
-    ]).animate(_animationController);
+    ]).animate(_curves);
 
     _animationController.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
@@ -65,11 +69,11 @@ class _AnimationTweenState extends State<AnimationTween>
       body: Container(
         child: Center(
           child: AnimatedBuilder(
-              animation: _animationController,
+              animation: _curves,
               builder: (BuildContext context, _) {
                 return IconButton(
                   icon: Icon(
-                    Icons.android,
+                    Icons.favorite,
                     color: _colorAnimation.value,
                     size: _sizeAnimation.value,
                   ),

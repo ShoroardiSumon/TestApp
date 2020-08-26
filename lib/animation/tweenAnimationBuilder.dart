@@ -17,24 +17,27 @@ class _TweenAnimationBuilserExState extends State<TweenAnimationBuilserEx> {
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          TweenAnimationBuilder(
-            child: Text(
-              "Tween",
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-            ),
-            tween: Tween<double>(begin: 0, end: 1),
-            duration: Duration(microseconds: 500),
-            builder: (BuildContext context, double _val, Widget child) {
-              return Opacity(
-                opacity: _val,
-                child: Padding(
-                  padding: EdgeInsets.only(top: _val * 10),
-                  child: child,
-                ),
-              );
-            },
-          ),
+          isTrue
+              ? TweenAnimationBuilder(
+                  child: Text(
+                    "Tween",
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  ),
+                  tween: Tween<double>(begin: 0, end: 1),
+                  duration: Duration(microseconds: 2000),
+                  builder: (BuildContext context, double _val, Widget child) {
+                    return Opacity(
+                      opacity: _val,
+                      child: Padding(
+                        padding: EdgeInsets.only(top: _val * 30),
+                        child: child,
+                      ),
+                    );
+                  },
+                )
+              : Container(),
           SizedBox(height: 30),
           RaisedButton(
               color: Colors.green,
