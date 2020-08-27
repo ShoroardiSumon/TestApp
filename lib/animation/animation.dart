@@ -52,7 +52,8 @@ class _AnimationHomeState extends State<AnimationHome> {
                       child: FadeInAnimation(
                           child: InkWell(
                         onTap: () {
-                          Navigator.of(context).push(_createRoute(index));
+                          Navigator.of(context)
+                              .push(_createRoute(_animationWidgetList[index]));
                         },
                         child: Card(
                           child: ListTile(
@@ -70,15 +71,11 @@ class _AnimationHomeState extends State<AnimationHome> {
     );
   }
 
-  Route _createRoute(int index) {
+  Route _createRoute(Widget _page) {
     return PageRouteBuilder(
       fullscreenDialog: true,
-      pageBuilder: (context, animation, secondaryAnimation) =>
-          _animationWidgetList[index],
+      pageBuilder: (context, animation, secondaryAnimation) => _page,
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
-        // var begin = Offset(1, 0);
-        // var end = Offset.zero;
-        // var curve = Curves.ease;
         var tween = Tween(begin: Offset(1, 0), end: Offset.zero)
             .chain(CurveTween(curve: Curves.ease));
 
