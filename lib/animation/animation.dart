@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:test_app/animation/animatedContainer.dart';
 import 'package:test_app/animation/animationTween.dart';
+import 'package:test_app/animation/delayedAnimation.dart';
+import 'package:test_app/animation/delayed_animation.dart';
 import 'package:test_app/animation/tweenAnimationBuilder.dart';
 
 class AnimationHome extends StatefulWidget {
@@ -14,10 +16,18 @@ class _AnimationHomeState extends State<AnimationHome> {
     "Animated Container",
     "Animation Tween",
     "Tween Animation Builder",
+    "Delayed Animation",
+    "Animation Delay EX",
     "Animation Tween",
     "Animated Container",
+    "Tween Animation Builder",
+    "Delayed Animation",
+    "Animation Delay EX",
     "Animation Tween",
     "Animated Container",
+    "Tween Animation Builder",
+    "Delayed Animation",
+    "Animation Delay EX",
     "Animation Tween",
   ];
 
@@ -25,10 +35,18 @@ class _AnimationHomeState extends State<AnimationHome> {
     AnimatedContainerEx(),
     AnimationTween(),
     TweenAnimationBuilserEx(),
-    AnimationTween(),
+    DelayedAnimationEx(),
+    AnimationDelayEx(),
     AnimatedContainerEx(),
     AnimationTween(),
+    TweenAnimationBuilserEx(),
+    DelayedAnimationEx(),
+    AnimationDelayEx(),
     AnimatedContainerEx(),
+    AnimationTween(),
+    TweenAnimationBuilserEx(),
+    DelayedAnimationEx(),
+    AnimationDelayEx(),
     AnimationTween(),
   ];
 
