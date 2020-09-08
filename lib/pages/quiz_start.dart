@@ -11,7 +11,7 @@ class _QuizStartState extends State<QuizStart> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Quiz'),
+        title: Text('MCQ Question'),
         centerTitle: true,
       ),
 
