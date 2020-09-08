@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:test_app/model/quiz_model.dart';
 import 'package:test_app/model/todoEx.dart';
 import 'package:test_app/model/vegModelEx.dart';
 import 'package:flutter/services.dart' show rootBundle;
@@ -17,6 +18,16 @@ class ProData extends ChangeNotifier {
     vegModelEx = vegModelExFromJson(response);
     print(vegModelEx.data.vagitables[0].name);
     return vegModelEx;
+  }
+
+  // if JSON data [{},{},{}]
+
+  List<QuizModel> quizModelList;
+  Future<String> fetchQuizQuestion() async {
+    final response = await rootBundle.loadString('assets/quiz_demo.json');
+    quizModelList = quizModelFromJson(response);
+    print(quizModelList[0].answer);
+    return "success";
   }
 
   // if [ "json" : "data" ] this type of json , then do this for parse json data

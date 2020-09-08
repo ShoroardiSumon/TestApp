@@ -70,10 +70,13 @@ class _HomePageState extends State<HomePage> {
                         leading: Hero(
                           tag: 'avatar' + _listGetUser[index].name,
                           child: CircleAvatar(
-                            child: Text(_listGetUser[index].name[0]),
+                            backgroundColor: Colors.greenAccent,
+                            child: Text(_listGetUser[index].name[0],style: TextStyle(color: Colors.white),),
                           ),
                         ),
-                        title: Text(_listGetUser[index].name),
+                        title: Text(
+                          _listGetUser[index].name
+                        ),
                         subtitle: Text(_listGetUser[index].email),
                         onTap: () {
                           Navigator.of(context).push(

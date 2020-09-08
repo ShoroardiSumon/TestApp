@@ -4,6 +4,7 @@ import 'package:test_app/animation/animatedContainer.dart';
 import 'package:test_app/animation/animationTween.dart';
 import 'package:test_app/animation/delayedAnimation.dart';
 import 'package:test_app/animation/delayed_animation.dart';
+import 'package:test_app/animation/delayed_display_animation.dart.dart';
 import 'package:test_app/animation/tweenAnimationBuilder.dart';
 
 class AnimationHome extends StatefulWidget {
@@ -18,17 +19,19 @@ class _AnimationHomeState extends State<AnimationHome> {
     "Tween Animation Builder",
     "Delayed Animation",
     "Animation Delay EX",
+    "Delayed Display Animation",
     "Animation Tween",
     "Animated Container",
     "Tween Animation Builder",
     "Delayed Animation",
     "Animation Delay EX",
+    "Delayed Display Animation",
     "Animation Tween",
     "Animated Container",
     "Tween Animation Builder",
     "Delayed Animation",
     "Animation Delay EX",
-    "Animation Tween",
+    "Delayed Display Animation",
   ];
 
   List<Widget> _animationWidgetList = [
@@ -37,17 +40,19 @@ class _AnimationHomeState extends State<AnimationHome> {
     TweenAnimationBuilserEx(),
     DelayedAnimationEx(),
     AnimationDelayEx(),
+    DelayedDisplayAnimation(),
     AnimatedContainerEx(),
     AnimationTween(),
     TweenAnimationBuilserEx(),
     DelayedAnimationEx(),
     AnimationDelayEx(),
+    DelayedDisplayAnimation(),
     AnimatedContainerEx(),
     AnimationTween(),
     TweenAnimationBuilserEx(),
     DelayedAnimationEx(),
     AnimationDelayEx(),
-    AnimationTween(),
+    DelayedDisplayAnimation(),
   ];
 
   @override

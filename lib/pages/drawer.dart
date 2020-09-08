@@ -5,6 +5,7 @@ import 'package:test_app/animation/animation.dart';
 import 'package:test_app/constants.dart';
 import 'package:test_app/pages/loadMore.dart';
 import 'package:test_app/pages/login_page.dart';
+import 'package:test_app/pages/quiz_page.dart';
 import 'package:test_app/pages/toDoPage.dart';
 import 'package:test_app/pages/vegitables.dart';
 import 'package:test_app/utils/add_shared_preferences.dart';
@@ -151,7 +152,8 @@ class DrawerView extends StatelessWidget {
               InkWell(
                 onTap: () {
                   Navigator.of(context).pop();
-                  //Navigator.of(context).push(MaterialPageRoute(builder: (context)=>));
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => QuizPage()));
                 },
                 child: ListTile(
                   leading: Icon(
@@ -161,7 +163,7 @@ class DrawerView extends StatelessWidget {
                   title: Padding(
                     padding: EdgeInsets.only(left: 15),
                     child: Text(
-                      'Educational Background',
+                      'Quiz',
                       style: TextStyle(
                         fontSize: 18,
                       ),

@@ -49,7 +49,6 @@ class _DelayedAnimationExState extends State<DelayedAnimationEx>
 
   @override
   Widget build(BuildContext context) {
-    final double _width = MediaQuery.of(context).size.width;
     _animationController.forward();
     return AnimatedBuilder(
         animation: _animationController,
