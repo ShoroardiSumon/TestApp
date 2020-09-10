@@ -27,7 +27,7 @@ class ProData extends ChangeNotifier {
     final response = await rootBundle.loadString('assets/quiz_demo.json');
     quizModelList = quizModelFromJson(response);
     print(quizModelList[0].answer);
-    return "success";
+    return quizModelList.toString();
   }
 
   // if [ "json" : "data" ] this type of json , then do this for parse json data

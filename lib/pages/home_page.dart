@@ -71,40 +71,50 @@ class _HomePageState extends State<HomePage> {
                           tag: 'avatar' + _listGetUser[index].name,
                           child: CircleAvatar(
                             backgroundColor: Colors.greenAccent,
-                            child: Text(_listGetUser[index].name[0],style: TextStyle(color: Colors.white),),
+                            child: Text(
+                              _listGetUser[index].name[0],
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ),
                         ),
-                        title: Text(
-                          _listGetUser[index].name
-                        ),
+                        title: Text(_listGetUser[index].name),
                         subtitle: Text(_listGetUser[index].email),
                         onTap: () {
-                          Navigator.of(context).push(
-                            PageRouteBuilder(
-                              fullscreenDialog: true,
-                              transitionDuration: Duration(milliseconds: 700),
-                              pageBuilder: (BuildContext context,
-                                      Animation<double> animation,
-                                      Animation<double> secondaryAnimation) =>
-                                  UserDetailPage(
-                                name: _listGetUser[index].name,
-                                email: _listGetUser[index].email,
-                                phone: _listGetUser[index].phone,
-                                addressCity: _listGetUser[index].address.city,
-                                companyName: _listGetUser[index].company.name,
-                                website: _listGetUser[index].website,
-                              ),
-                              transitionsBuilder: (BuildContext context,
-                                  Animation<double> animation,
-                                  Animation<double> secondaryAnimation,
-                                  Widget child) {
-                                return FadeTransition(
-                                  opacity: animation,
-                                  child: child,
-                                );
-                              },
-                            ),
-                          );
+                          Navigator.of(context)
+                              .push(_createRoute(UserDetailPage(
+                            name: _listGetUser[index].name,
+                            email: _listGetUser[index].email,
+                            phone: _listGetUser[index].phone,
+                            addressCity: _listGetUser[index].address.city,
+                            companyName: _listGetUser[index].company.name,
+                            website: _listGetUser[index].website,
+                          )));
+                          // Navigator.of(context).push(
+                          //   PageRouteBuilder(
+                          //     fullscreenDialog: true,
+                          //     transitionDuration: Duration(milliseconds: 700),
+                          //     pageBuilder: (BuildContext context,
+                          //             Animation<double> animation,
+                          //             Animation<double> secondaryAnimation) =>
+                          //         UserDetailPage(
+                          // name: _listGetUser[index].name,
+                          // email: _listGetUser[index].email,
+                          // phone: _listGetUser[index].phone,
+                          // addressCity: _listGetUser[index].address.city,
+                          // companyName: _listGetUser[index].company.name,
+                          // website: _listGetUser[index].website,
+                          //     ),
+                          //     transitionsBuilder: (BuildContext context,
+                          //         Animation<double> animation,
+                          //         Animation<double> secondaryAnimation,
+                          //         Widget child) {
+                          //       return FadeTransition(
+                          //         opacity: animation,
+                          //         child: child,
+                          //       );
+                          //     },
+                          //   ),
+                          // );
                         },
                       );
                     },
@@ -116,6 +126,23 @@ class _HomePageState extends State<HomePage> {
               },
             ),
           )),
+    );
+  }
+
+  Route _createRoute(Widget _page) {
+    return PageRouteBuilder(
+      fullscreenDialog: true,
+      pageBuilder: (context, animation, secondaryAnimation) => _page,
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        var tween = Tween(begin: Offset(1, -1), end: Offset.zero)
+            .chain(CurveTween(curve: Curves.ease));
+
+        return SlideTransition(
+          position: animation.drive(tween),
+          child: child,
+        );
+      },
+      transitionDuration: Duration(milliseconds: 400),
     );
   }
 
